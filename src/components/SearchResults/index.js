@@ -24,12 +24,10 @@ const SearchResults = () => {
 				setData(data.photos.photo)
 				setIsLoading(false)
 			})
+			.catch((error) => console.error(error))
 	}, [queryText])
 	return !isLoading && data ? (
-		<ImageList sx={{ width: 500, height: 450 }}>
-			<ImageListItem key='Subheader' cols={2}>
-				<ListSubheader component='div'>December</ListSubheader>
-			</ImageListItem>
+		<ImageList sx={{ width: '100%', height: '80vh', margin: '10px auto 0' }}>
 			{data.map((item) => (
 				<ImageListItem key={item.id}>
 					<img
